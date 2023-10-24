@@ -3,9 +3,9 @@
 const Banner = () => {
     return (
         <div>
-            <div className="carousel w-full h-[600px]">
+            <div className="carousel w-full h-[600px] rounded-lg">
                 <div id="slide1" className="carousel-item relative w-full">
-                    <img src="src/assets/images/banner/5.jpg" className="w-full rounded-xl" />
+                    <img src="src/assets/images/banner/5.jpg" className="w-full" />
                     <div className="absolute flex items-center  h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
                         <div className="text-white space-y-7 pl-12 w-1/2">
                             <h1 className="font-bold text-5xl">Affordable Price For Car Servicing</h1>
