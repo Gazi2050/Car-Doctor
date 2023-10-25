@@ -12,7 +12,7 @@ const ServiceCard = ({ service }) => {
                     <h2 className="card-title">{title}</h2>
                     <p className="text-xl text-[#FF3811] font-semibold">Price: {price}</p>
                     <div className="card-actions  ml-auto ">
-                        <BsFillArrowRightCircleFill className="text-[#FF3811] text-3xl hover:text-black" />
+                        <BsFillArrowRightCircleFill className="text-[#FF3811] text-3xl hover:text-black cursor-pointer" />
                     </div>
                 </div>
             </div>
