@@ -17,13 +17,13 @@ const Login = () => {
                             <h1 className="text-3xl font-bold text-center">Login</h1>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text font-medium">Email</span>
                                 </label>
                                 <input name='email' type="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text font-medium">Password</span>
                                 </label>
                                 <input name='password' type="password" placeholder="password" className="input input-bordered" required />
                                 <label className="label">

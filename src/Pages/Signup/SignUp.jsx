@@ -1,9 +1,33 @@
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/login.svg'
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const SignUp = () => {
+
+    const { createUser } = useContext(AuthContext);
+
     const handleSignUp = e => {
         e.preventDefault();
+        const form = e.target
+        const email = form.email.value;
+        const password = form.password.value;
+        const name = form.name.value;
+        const user = { email, password, name };
+        console.log(user);
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .then(error => console.log(error))
+
+
+
+
+
+
     }
     return (
         <div>
@@ -17,15 +41,21 @@ const SignUp = () => {
                             <h1 className="text-3xl font-bold text-center">Sign Up</h1>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text font-medium">Name</span>
                                 </label>
-                                <input name='email' type="email" placeholder="email" className="input input-bordered" required />
+                                <input name='name' type="text" placeholder="Your Name" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text font-medium">Email</span>
                                 </label>
-                                <input name='password' type="password" placeholder="password" className="input input-bordered" required />
+                                <input name='email' type="email" placeholder="Email" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text font-medium">Password</span>
+                                </label>
+                                <input name='password' type="password" placeholder="Password" className="input input-bordered" required />
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Show password</a>
                                 </label>
