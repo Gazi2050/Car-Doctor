@@ -3,7 +3,7 @@ import { PiPhoneCallFill } from "react-icons/pi";
 import { FaLocationDot } from "react-icons/fa6";
 const Contact = () => {
     return (
-        <div className="bg-black p-12 text-white rounded-lg lg:flex md:flex justify-evenly items-center space-y-10 lg:space-y-0 md:space-y-0">
+        <div className="bg-black p-12 text-white rounded-lg lg:flex md:flex justify-evenly items-center space-y-10 lg:space-y-0 md:space-y-0 my-5">
             <div className="flex justify-center items-center mr-4">
                 <div>
                     <BsFillCalendarDateFill className="text-4xl m-1 text-[#FF3811]" />
