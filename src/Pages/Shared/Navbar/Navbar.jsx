@@ -14,14 +14,14 @@ const Navbar = () => {
             <nav className="relative bg-white shadow dark:bg-gray-800">
                 <div className="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
                     <div className="flex items-center justify-between">
-                        <Link to="/">
+                        <Link to="/" className='flex'>
                             <img
                                 className="w-12"
                                 src="/wrench.png"
                                 alt=""
                             />
+                            <p className='text-xl font-bold m-1'>Car Doctor</p>
                         </Link>
-                        <p className='text-xl font-bold m-1'>Car Doctor</p>
                         <div className="flex md:hidden lg:hidden">
                             <button
                                 onClick={toggleMenu}
