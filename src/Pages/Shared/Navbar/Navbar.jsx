@@ -1,9 +1,19 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch } from "react-icons/fi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { AuthContext } from '../../../Providers/AuthProvider';
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
     const [isOpen, setIsOpen] = useState(false);
+
+    const handleLogout = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -99,12 +109,29 @@ const Navbar = () => {
                             >
                                 Contact
                             </Link>
-                            <Link
-                                to="/Login"
-                                className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
-                            >
-                                Login
-                            </Link>
+                            {user?.email ?
+                                <>
+                                    <Link
+                                        to="/Bookings"
+                                        className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+                                    >
+                                        My Bookings
+                                    </Link>
+
+                                    <span>
+                                        <button onClick={handleLogout} className='btn btn-sm btn-outline text-[#FF3811]'>
+                                            LogOut
+                                        </button>
+                                    </span>
+
+                                </>
+                                :
+                                <Link
+                                    to="/Login"
+                                    className="my-2 text-gray-700 transition-colors duration-300 transform dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 md:mx-4 md:my-0"
+                                >
+                                    Login
+                                </Link>}
                         </div>
 
                         <div className="m-2 flex-row  md:block">
@@ -134,8 +161,8 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
-            </nav>
-        </div>
+            </nav >
+        </div >
     );
 };
 
